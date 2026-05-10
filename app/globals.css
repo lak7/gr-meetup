@@ -1,0 +1,245 @@
+:root {
+  --bg: #f3f6fa;
+  --ink: #111827;
+  --muted: #5b6679;
+  --surface: #ffffff;
+  --accent: #e3392f;
+  --accent-soft: #fff0ee;
+  --good: #1f8f49;
+  --good-soft: #edf9f1;
+  --line: #dce3ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #0e1a2a 0%, #1d2f45 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f5b1ab;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #d4ddeb;
+}
+
+.sos,
+.primary,
+.safe,
+.ghost {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sos,
+.primary {
+  background: linear-gradient(180deg, #ff5f4d 0%, #d92b1f 100%);
+  color: #fff;
+}
+
+.safe {
+  background: linear-gradient(180deg, #2dab59 0%, #1a8a43 100%);
+  color: #fff;
+}
+
+.ghost {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.ghost:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.card,
+.dashboard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.muted,
+.label,
+.choice p,
+.panel p,
+.incident small {
+  color: var(--muted);
+}
+
+.label {
+  margin-top: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.choice,
+.panel,
+.success,
+.incident,
+.tips,
+.copilot {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 14px;
+}
+
+.choice {
+  text-align: left;
+}
+
+.choice h3 {
+  margin-bottom: 6px;
+}
+
+.choice.active.red {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.choice.active.green {
+  border-color: var(--good);
+  background: var(--good-soft);
+}
+
+.primary {
+  margin-top: 14px;
+}
+
+.panel,
+.tips,
+.success,
+.copilot {
+  margin-top: 12px;
+}
+
+.panel small {
+  display: block;
+  margin-top: 8px;
+  color: var(--good);
+  font-weight: 600;
+}
+
+.notes {
+  width: 100%;
+  min-height: 90px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0;
+  font: inherit;
+}
+
+.copilot ul {
+  margin: 8px 0;
+  padding-left: 18px;
+}
+
+.copilot li + li {
+  margin-top: 6px;
+}
+
+.error {
+  color: #bb1f16;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.dashboard-grid {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.kind {
+  font-weight: 700;
+}
+
+.kind.red {
+  color: var(--accent);
+}
+
+.kind.green {
+  color: var(--good);
+}
+
+@media (max-width: 900px) {
+  .grid.two,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .actions,
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
